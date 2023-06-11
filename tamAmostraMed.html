@@ -7,6 +7,41 @@
     <title>Tamanho da Amostra - Média | Arithmatic</title>
 </head>
 <body>
-    <h2>Tamanho da Amostra - Média</h2>
+    <h2> Tamanho de Amostra - Média</h2>
+
+    <form>
+     
+      <label for="">Grau de confiança:</label>
+     
+
+      <input type="radio" id="opcao1" name="opcoes" value="90" />
+      <label for="opcao1">90%</label>
+
+      <input type="radio" id="opcao2" name="opcoes" value="95" />
+      <label for="opcao2">95%</label>
+
+      <input type="radio" id="opcao3" name="opcoes" value="99" />
+      <label for="opcao3">99%</label>
+
+      <label for="">Desvio padrão</label>
+      <input type="number" id="desvPad" />
+
+      <label for=""> Erro </label>
+      <input type="number" id="erro" />
+
+    </form>
+
+      <button id="btnSubmit" onclick="tamAmostraMed()">Calcular</button>
+    
+    
+    <div id="resultado">
+    </div>
+    
+       
+         
+        
+
+    <script src="./JS/tamAmostraMed.js"></script>
+  </body>
 </body>
 </html>
