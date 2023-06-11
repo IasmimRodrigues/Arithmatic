@@ -30,12 +30,15 @@ document.getElementById("btnSubmit").onclick = function () {
   
     let intervaloMenos = valordeP - arredondar;
     let intervaloMais = valordeP + arredondar;
+
+    let arredondarmenos = parseFloat(intervaloMenos.toFixed(2));
+    let arredondarmais = parseFloat(intervaloMais.toFixed(2));
   
     document.getElementById("resultado").innerHTML =
       "<h2>Intervalo de confiança: " +
-      intervaloMenos +
+      arredondarmenos +
       " < π < " +
-      intervaloMais +
+      arredondarmais +
       "</h2>";
   }
 
@@ -47,8 +50,7 @@ document.getElementById("btnSubmit").onclick = function () {
     let tamAmostraP = Number(document.getElementById("tamAmostraP").value);
 
     let resultadoP = numSucesso/tamAmostraP;
-    console.log(numSucesso);
-    console.log(tamAmostraP);
+    
 
     document.getElementById("resultadoP").innerHTML =
     "<h2>Valor de P: " +
