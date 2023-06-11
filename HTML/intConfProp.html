@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intervalo de Confiança - Proporção | Arithmatic</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intervalo de Confiança - Proporção | Arithmatic</title>
 </head>
+
+
 <body>
-    <h2>Intervalo de Confiança - Proporção</h2>
+  <h2>Intervalo de Confiança - Proporção </h2>
+
+  <form>
+
+    <label for=""> Valor de P</label>
+    <input type="number" id="valordeP" />
+ 
+   
+   
+
+
+    <label for="">Tamanho da amostra</label>
+    <input type="number" id="tamAmostra" />
+
+
+    <label for="">Grau de confiança:</label>
+
+
+    <input type="radio" id="opcao1" name="opcoes" value="90" />
+    <label for="opcao1">90%</label>
+
+    <input type="radio" id="opcao2" name="opcoes" value="95" />
+    <label for="opcao2">95%</label>
+
+    <input type="radio" id="opcao3" name="opcoes" value="99" />
+    <label for="opcao3">99%</label>
+
+  </form>
+
+  <button id="btnSubmit" onclick="intConfProp()">Calcular</button>
+
+   <!-- Código para calcular o valor do P dentro do modal: -->
+  
+  <div id="modal" style="display:none;">
+  <form action="">
+  
+
+    <div class="help">
+      <label for=""> Numero de sucesso </label>
+      <img src="./assets/question.svg" alt="ícone de ajuda" title="É a ocorrência positiva da condição que está sendo estudada na amostra.
+Ex: X pessoas votariam no candidato Z" />
+
+    <input type="number" id="numSucesso" />
+    </div>
+
+
+    <label for="">Tamanho da amostra</label>
+    <input type="number" id="tamAmostraP" />
+
+    
+
+  </form>
+  <button id="btnSubmit" onclick="calcularP()">Calcular P</button>
+  <div id="resultadoP"></div>
+ 
+</div>
+<button id="btnSubmit" onclick="abrirmodal()"> Não tenho valor de P </button>
+ 
+
+
+  <div id="resultado"></div>
+ 
+
+  <script src="../JS/intConfProp.js"></script>
 </body>
+
 </html>
