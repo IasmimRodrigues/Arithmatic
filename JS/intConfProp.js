@@ -9,11 +9,13 @@ document.getElementById("btnSubmit").onclick = function () {
     }
   };
   
+  let grauConf;
+
   function intConfProp(opcaoRadio) {
     
     let valordeP = Number(document.getElementById("valordeP").value);
     let tamAmostra = Number(document.getElementById("tamAmostra").value);
-    let grauConf;
+    grauConf;
   
     if (opcaoRadio == 90) {
       grauConf = 1.645;
@@ -35,11 +37,11 @@ document.getElementById("btnSubmit").onclick = function () {
     let arredondarmais = parseFloat(intervaloMais.toFixed(2));
   
     document.getElementById("resultado").innerHTML =
-      "<h2>Intervalo de confiança: " +
-      arredondarmenos +
-      " < π < " +
-      arredondarmais +
-      "</h2>";
+    "<h2>Intervalo de confiança: </h2> <h3>" +
+    arredondarmenos +
+    " < μ < " +
+    arredondarmais +
+    "</h3>";
   }
 
   /* Função para calcular o valor de P dentro do modal*/
@@ -53,10 +55,30 @@ document.getElementById("btnSubmit").onclick = function () {
     
 
     document.getElementById("resultadoP").innerHTML =
-    "<h2>Valor de P: " +
+    "<h2>Valor de P: </h2> <h3>" +
+    resultadoP +
+    "</h3>";
+
+    document.getElementById("valordeP").value = resultadoP;
+
+    document.getElementById("valordeP-td").innerText =
     resultadoP;
+
   }
 
-function abrirmodal(){
-  document.getElementById("modal").style.display = "block";
-}
+  function insertRadio(value) {
+    document.getElementById("grauConf-td").innerText =
+    value;
+  }
+
+  document.querySelector("#tamAmostra").oninput = () => {
+    document.querySelector("#tamAmostra-td").innerText = document
+      .querySelector("#tamAmostra")
+      .value.toUpperCase();
+  };
+
+  document.querySelector("#valordeP").oninput = () => {
+    document.querySelector("#valordeP-td").innerText = document
+      .querySelector("#valordeP")
+      .value.toUpperCase();
+  };

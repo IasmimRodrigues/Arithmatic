@@ -23,7 +23,7 @@
       <div class="links">
         <ul>
           <li><a href="../HTML/index.html">Home</a></li>
-          <li><a href="../HTML/intConfMed.html">IC - Média</a></li>
+          <li><a href="../HTML/intConfMed.html" class="pagAtual">IC - Média</a></li>
           <li><a href="../HTML/intConfProp.html">IC - Proporção</a></li>
           <li><a href="../HTML/tamAmostraMed.html">TA - Média</a></li>
           <li><a href="../HTML/tamAmostraProp.html">TA - Proporção</a></li>
@@ -47,17 +47,17 @@
 
             <div class="radios">
               <div class="radio">
-                <input type="radio" id="opcao1" name="opcoes" value="90" />
+                <input type="radio" id="opcao1" name="opcoes" value="90" onclick="insertRadio('1.645')"/>
                 <label for="opcao1">90%</label>
               </div>
 
               <div class="radio">
-                <input type="radio" id="opcao2" name="opcoes" value="95" />
+                <input type="radio" id="opcao2" name="opcoes" value="95" onclick="insertRadio('1.96')"/>
                 <label for="opcao2">95%</label>
               </div>
 
               <div class="radio">
-                <input type="radio" id="opcao3" name="opcoes" value="99" />
+                <input type="radio" id="opcao3" name="opcoes" value="99" onclick="insertRadio('2.575')"/>
                 <label for="opcao3">99%</label>
               </div>
             </div>
@@ -83,7 +83,7 @@
       </section>
 
       <section class="tabela">
-        <dialog class="dialog">
+        <dialog class="dialog-modal">
           <div class="close-modal">
             <button id="buttonClose" class="buttonClose">
               <ion-icon name="close-outline"></ion-icon>
@@ -173,6 +173,7 @@
     </main>
 
     <script src="../JS/index.js"></script>
+    <script src="../JS/intConfMed.js"></script>
 
     <script
       type="module"

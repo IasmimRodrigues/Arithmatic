@@ -1,43 +1,65 @@
 document.getElementById("btnSubmit").onclick = function () {
-    let radios = document.getElementsByName("opcoes");
-    let opcaoRadio;
-    for (let i = 0; i < radios.length; i++) {
-      if (radios[i].checked) {
-        opcaoRadio = radios[i].value;
-        intConfMed(opcaoRadio);
-       
-      }
+  let radios = document.getElementsByName("opcoes");
+  let opcaoRadio;
+  for (let i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      opcaoRadio = radios[i].value;
+      calcular(opcaoRadio);
     }
+  }
+};
+
+function calcular(opcaoRadio) {
+  let media = Number(document.getElementById("media-input").value);
+  // let grauConf = Number(document.getElementById('grauConf').value);
+  let desvPad = Number(document.getElementById("desvPad-input").value);
+  let tamAmostra = Number(document.getElementById("tamAmostra-input").value);
+  let grauConf;
+
+  if (opcaoRadio == 90) {
+    grauConf = 1.645;
+  } else if (opcaoRadio == 95) {
+    grauConf = 1.96;
+  } else {
+    grauConf = 2.575;
+  }
+
+  let raiz = Math.sqrt(tamAmostra);
+  let erro = (grauConf * desvPad) / raiz;
+
+  let arredondar = parseFloat(erro.toFixed(2)); // para aproximar o número
+
+  let intervaloMenos = media - arredondar;
+  let intervaloMais = media + arredondar;
+
+  document.getElementById("resultado").innerHTML =
+    "<h2>Intervalo de confiança: </h2> <h3>" +
+    intervaloMenos +
+    " < μ < " +
+    intervaloMais +
+    "</h3>";
+}
+
+function insertRadio(value) {
+  document.getElementById("grauConf-td").innerText =
+  value;
+}
+
+  document.querySelector("#media-input").oninput = () => {
+    document.querySelector("#media-td").innerText = document
+      .querySelector("#media-input")
+      .value.toUpperCase();
   };
   
-  function intConfMed(opcaoRadio) {
-    let media = Number(document.getElementById("media").value);
-    // let grauConf = Number(document.getElementById('grauConf').value);
-    let desvPad = Number(document.getElementById("desvPad").value);
-    let tamAmostra = Number(document.getElementById("tamAmostra").value);
-    let grauConf;
+  document.querySelector("#desvPad-input").oninput = () => {
+    document.querySelector("#desvPad-td").innerText = document
+      .querySelector("#desvPad-input")
+      .value.toUpperCase();
+  };
   
-    if (opcaoRadio == 90) {
-      grauConf = 1.645;
-    } else if (opcaoRadio == 95) {
-      grauConf = 1.96;
-    } else {
-      grauConf = 2.575;
-    }
-  
-    let raiz = Math.sqrt(tamAmostra);
-    let erro = (grauConf * desvPad) / raiz;
-  
-    let arredondar = parseFloat(erro.toFixed(2)); // para aproximar o número
-  
-    let intervaloMenos = media - arredondar;
-    let intervaloMais = media + arredondar;
-  
-    document.getElementById("resultado").innerHTML =
-      "<h2>Intervalo de confiança: " +
-      intervaloMenos +
-      " < μ < " +
-      intervaloMais +
-      "</h2>";
-  }
+  document.querySelector("#tamAmostra-input").oninput = () => {
+    document.querySelector("#tamAmostra-td").innerText = document
+      .querySelector("#tamAmostra-input")
+      .value.toUpperCase();
+  };
   

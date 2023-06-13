@@ -15,13 +15,6 @@
     --lilas: #C6ADFF;
   }
 
-  body {
-    background: var(--background-color);
-    color: var(--color-white);
-
-    overflow: hidden
-  }
-
   header {
     background: var(--roxo);
     padding: 1.2rem 9rem;
@@ -43,6 +36,16 @@
     gap: 50px;
   }
 
+  header .links ul li .pagAtual {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-white);
+    opacity: 100%;
+
+    transition: 0.3s;
+  }
+
   header .links ul li a {
     text-decoration: none;
     font-size: 0.9rem;
@@ -56,3 +59,5 @@
   header .links ul li a:hover {
     opacity: 100%;
   }
+
+  

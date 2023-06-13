@@ -110,6 +110,28 @@
     outline: 2px var(--verde-agua) solid;
   }
 
+  main .inputs form .input .valor-P, .valor-erro {
+    margin-top: 20px;
+  }
+
+  #valorP-open, #valorErro-open {
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    border: none;
+    background: #A855F720;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--lilas);
+
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #valorP-open:hover, #valorErro-open:hover {
+    background: #A855F735;
+  }
+
   main .inputs form .options-radios .radios {
     display: flex;
     gap: 50px;
@@ -194,17 +216,41 @@
 
   main .tabela #resultado {
     display: flex;
-    align-items: center;
+    /* flex-direction: column; */
     gap: 15px;
 
     height: 50px;
     margin-bottom: 130px;
   }
 
-  main .tabela #resultado h2{
+  main .tabela #resultado-amostra {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    height: 50px;
+    margin-bottom: 130px;
+  }
+
+  main .tabela #resultado-amostra .res {
+    display: flex;
+    gap: 10px;
+  }
+
+  main .tabela #resultado h2, #resultado-amostra h2 {
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--lilas);
+  }
+
+  main .tabela #resultado h3, #resultado-amostra h3 {
+    display: flex;
+    align-items: start;
+    gap: 5px;
+  }
+
+  main .tabela #resultado-amostra h3 img {
+    width: 12px;
   }
 
   /* teste */
@@ -236,12 +282,12 @@
 
   /* estilo modal */
 
-  .dialog::backdrop {
+  .dialog-modal::backdrop, .dialog-P::backdrop, .dialog-erro::backdrop {
     background-color: #00000050;
     backdrop-filter: blur(3px);
   }
 
-  .dialog {
+  .dialog-modal, .dialog-P, .dialog-erro {
     margin: auto;
     width: 900px;
     height: 600px;
@@ -252,18 +298,18 @@
     border: none;
   }
 
-  .dialog .content-modal {
+  .dialog-modal .content-modal {
     padding: 1rem 5rem 3rem;
   }
 
-  .dialog .content-modal h2 {
-    margin-bottom: 40px;
+  .dialog-modal .content-modal h2, .dialog-P .content-modal h2, .dialog-erro .content-modal h2 {
+    margin-bottom: 30px;
     color: var(--color-white);
     font-weight: 800;
     font-size: 1.6rem;
   }
 
-  .dialog .content-modal p {
+  .dialog-modal .content-modal p {
     color: #ffffffbb;
     font-size: 1rem;
     font-weight: 300;
@@ -271,22 +317,111 @@
     margin-bottom: 10px;
   }
   
-  .dialog .close-modal {
+  .dialog-modal .close-modal, .dialog-P .close-modal-P, .dialog-erro .close-modal-erro {
     display: flex;
     justify-content: flex-end;
     margin: 15px;
   }
 
-  .dialog .close-modal button {
+  .dialog-modal .close-modal button, .dialog-P .close-modal-P button, .dialog-erro .close-modal-erro button {
     padding: 5px;
     border: none;
     background: var(--azul-escuro);
     cursor: pointer;
   }
   
-  .dialog .close-modal button ion-icon {
+  .dialog-modal .close-modal button ion-icon, .dialog-P .close-modal-P button ion-icon, .dialog-erro .close-modal-erro button ion-icon {
     font-size: 25px;
     color: var(--roxo);
+  }
+
+  .dialog-modal .content-modal, .dialog-P .content-modal, .dialog-erro .content-modal {
+    padding: 1rem 5rem 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dialog-P form, .dialog-erro form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    margin-top: 2rem;
+  }
+
+  .dialog-P form .input label, .dialog-erro form .input label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-white);
+
+    margin-bottom: 10px;
+  }
+
+  .dialog-P form .input:first-child label, .dialog-erro form .input:first-child label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .dialog-P form input, .dialog-erro form input {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 2px solid #0a2e4e;
+    background: #08243d;
+    margin-top: 10px;
+
+    font-size: 0.9rem;
+    color: var(--color-white);
+  }
+
+  .dialog-P form input:focus, .dialog-erro form input:focus {
+    outline: 2px var(--verde-agua) solid;
+  }
+
+  #btnSubmit {
+    width: 50%;
+    height: 50px;
+    border-radius: 4px;
+    background: #9333EA;
+    border: none;
+    margin-top: 30px;
+
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+
+    transition: 0.3s;
+  }
+
+  #btnSubmit:hover {
+    background: var(--roxo);
+  }
+
+  .dialog-P .content-modal #resultadoP, .dialog-erro .content-modal #resultadoErro {
+    display: flex;
+    width: 50%;
+    margin-top: 3.2rem;
+    gap: 1rem;
+  }
+
+  .dialog-P .content-modal #resultadoP h2, .dialog-erro .content-modal #resultadoErro h2 {
+    font-size: 1.5rem;
+    color: var(--verde-agua);
+  }
+
+  .dialog-P .content-modal #resultadoP h3, .dialog-erro .content-modal #resultadoErro h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-white);
   }
 
 
