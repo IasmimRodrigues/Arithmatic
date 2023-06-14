@@ -32,34 +32,38 @@ function calcular(opcaoRadio) {
   let intervaloMenos = media - arredondar;
   let intervaloMais = media + arredondar;
 
+  let arredondarmenos = parseFloat(intervaloMenos.toFixed(2));
+  let arredondarmais = parseFloat(intervaloMais.toFixed(2));
+  let arredondarerro = parseFloat(erro.toFixed(2));
+
   document.getElementById("resultado").innerHTML =
     "<h2>Intervalo de confiança: </h2> <h3>" +
-    intervaloMenos +
+    arredondarmenos +
     " < μ < " +
-    intervaloMais +
+    arredondarmais +
     "</h3>";
+
+  document.getElementById("erro-td").innerHTML = arredondarerro;
 }
 
 function insertRadio(value) {
-  document.getElementById("grauConf-td").innerText =
-  value;
+  document.getElementById("grauConf-td").innerText = value;
 }
 
-  document.querySelector("#media-input").oninput = () => {
-    document.querySelector("#media-td").innerText = document
-      .querySelector("#media-input")
-      .value.toUpperCase();
-  };
-  
-  document.querySelector("#desvPad-input").oninput = () => {
-    document.querySelector("#desvPad-td").innerText = document
-      .querySelector("#desvPad-input")
-      .value.toUpperCase();
-  };
-  
-  document.querySelector("#tamAmostra-input").oninput = () => {
-    document.querySelector("#tamAmostra-td").innerText = document
-      .querySelector("#tamAmostra-input")
-      .value.toUpperCase();
-  };
-  
+document.querySelector("#media-input").oninput = () => {
+  document.querySelector("#media-td").innerText = document
+    .querySelector("#media-input")
+    .value.toUpperCase();
+};
+
+document.querySelector("#desvPad-input").oninput = () => {
+  document.querySelector("#desvPad-td").innerText = document
+    .querySelector("#desvPad-input")
+    .value.toUpperCase();
+};
+
+document.querySelector("#tamAmostra-input").oninput = () => {
+  document.querySelector("#tamAmostra-td").innerText = document
+    .querySelector("#tamAmostra-input")
+    .value.toUpperCase();
+};

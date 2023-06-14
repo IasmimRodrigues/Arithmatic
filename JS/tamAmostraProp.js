@@ -33,7 +33,7 @@ document.getElementById("btnSubmit").onclick = function () {
     // '<img src="./assets/question.svg" alt="ícone de ajuda" title="Esse resultado já está arredondado para o inteiro mais próximo">';
 
     document.getElementById("resultado-amostra").innerHTML =
-    '<div class="res"><h2>Intervalo de confiança: </h2> <h3>' +
+    '<div class="res"><h2>Tamanho da amostra:</h2> <h3>' +
     amostra +
     '</h3></div> <div class="res">' +
     "<h2>Inteiro mais próximo: </h2> <h3>" +
@@ -50,18 +50,17 @@ document.getElementById("btnSubmit").onclick = function () {
     let tamAmostraP = Number(document.getElementById("tamAmostraP").value);
 
     let resultadoP = numSucesso/tamAmostraP;
-    console.log(numSucesso);
-    console.log(tamAmostraP);
+    let arredondarP = parseFloat(resultadoP.toFixed(2))
 
     document.getElementById("resultadoP").innerHTML =
     "<h2>Valor de P: </h2> <h3>" +
-    resultadoP +
+    arredondarP +
     "</h3>";
 
-    document.getElementById("valordeP").value = resultadoP;
+    document.getElementById("valordeP").value = arredondarP;
 
     document.getElementById("valordeP-td").innerText =
-    resultadoP;
+    arredondarP;
   }
 
 // function abrirmodal(){

@@ -71,7 +71,7 @@
           <input type="number" id="erro" />
 
           <div class="valor-erro">
-            <a id="valorErro-open">Não tenho o valor do erro</a>
+            <a id="valorErro-open" href="../HTML/intConfMed.html"> Não tenho o valor do erro</a>
           </div>
         </div>
     
@@ -96,61 +96,16 @@
         </div>
 
         <div class="content-modal">
-          <h2>Intervalo de Confiança - Média</h2>
+          <h2>Tamanho da Amostra - Média</h2>
           <p>
-            O intervalo de confiança para a média é uma medida estatística que
-            fornece uma faixa de valores dentro da qual se espera que esteja a
-            média populacional de uma determinada variável, com um certo nível
-            de confiança.
+            O tamanho da amostra necessário para estimar a média populacional com um determinado grau de confiança e erro é determinado pelo desvio padrão da população (ou estimativa), pelo grau de confiança desejado e pelo erro máximo tolerado na estimativa.
           </p>
-          <p>
-            Quando estamos lidando com dados amostrais, geralmente não temos
-            acesso a toda a população, então precisamos fazer inferências
-            sobre os parâmetros populacionais com base nas informações obtidas
-            da amostra. O intervalo de confiança para a média é uma dessas
-            inferências.
-          </p>
-          <p>
-            O intervalo de confiança para a média é calculado a partir das
-            características da amostra, como média amostral, desvio padrão
-            amostral e tamanho da amostra, juntamente com um nível de
-            confiança escolhido. O nível de confiança é uma medida da
-            probabilidade de que o intervalo captura corretamente o valor
-            verdadeiro da média populacional. É comum usar níveis de confiança
-            de 90%, 95% ou 99%.
-          </p>
-          <p>
-            O cálculo do intervalo de confiança para a média é baseado na
-            distribuição t de Student, que leva em consideração o tamanho da
-            amostra e a variabilidade dos dados. Quanto maior o tamanho da
-            amostra, menor será o intervalo de confiança, pois a estimativa da
-            média amostral será mais precisa.
-          </p>
-          <p>
-            Por exemplo, suponha que temos uma amostra de 100 indivíduos e
-            queremos estimar a média de altura da população com 95% de
-            confiança. Após calcular a média e o desvio padrão da amostra,
-            podemos usar a distribuição t de Student para determinar os
-            valores críticos correspondentes ao nível de confiança escolhido.
-            Com esses valores, construímos o intervalo de confiança para a
-            média, que nos dirá que, em média, a altura populacional está
-            dentro dessa faixa específica.
-          </p>
-          <p>
-            É importante lembrar que o intervalo de confiança não fornece uma
-            estimativa pontual da média populacional, mas sim uma faixa de
-            valores plausíveis. Além disso, o intervalo de confiança é baseado
-            em pressuposições e limitações específicas, como a aleatoriedade
-            da amostra e a representatividade da mesma em relação à população.
-          </p>
-          <p>
-            Em resumo, o intervalo de confiança para a média é uma ferramenta
-            estatística que nos permite fazer inferências sobre a média
-            populacional com base em informações amostrais. Ele fornece uma
-            estimativa da incerteza associada à estimativa da média e é útil
-            para tomar decisões e fazer previsões com um certo nível de
-            confiança.
-          </p>
+          <ul>
+            <li><span>Grau de confiança: </span>O grau de confiança representa a probabilidade de que o intervalo de confiança contém a verdadeira média populacional. Geralmente, é expresso em forma percentual, como 90%, 95% ou 99% de confiança.</li>
+            <li><span>Desvio padrão: </span>O desvio padrão é uma medida de dispersão que indica o quão distantes os valores da amostra estão da média. É utilizado para estimar a variabilidade da população.</li>
+            <li><span>Erro: </span>O erro é a diferença entre a estimativa da média populacional e o valor real. O tamanho do erro está inversamente relacionado ao tamanho da amostra e ao grau de confiança. Quanto menor o erro desejado, maior deverá ser o tamanho da amostra.</li>
+          </ul>
+          <p><span>Exemplo: </span>Se você deseja estimar a renda média de uma população com um erro máximo de R$ 500 e um grau de confiança de 95%, você precisará conhecer o desvio padrão da renda da população (ou obter uma estimativa) e usar uma fórmula de cálculo para determinar o tamanho mínimo da amostra necessário para atender a esses critérios.</p>
         </div>
       </dialog>
 
@@ -171,7 +126,7 @@
 
       <div id="resultado-amostra">
         <div class="res">
-          <h2>Intervalo de confiança: </h2> <h3></h3>
+          <h2>Tamanho da amostra: </h2> <h3></h3>
         </div>
         <!-- <div class="res">
           <h2>Inteiro mais próximo: </h2> <h3></h3>

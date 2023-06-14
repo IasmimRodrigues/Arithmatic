@@ -119,6 +119,7 @@
     border-radius: 0.2rem;
     border: none;
     background: #A855F720;
+    text-decoration: none;
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -315,6 +316,28 @@
     font-weight: 300;
 
     margin-bottom: 10px;
+  }
+
+  .dialog-modal .content-modal ul {
+    margin: 15px 0;
+  }
+
+  .dialog-modal .content-modal ul li {
+    color: #ffffffbb;
+    font-size: 1rem;
+    font-weight: 300;
+
+    margin-bottom: 10px;
+  }
+
+  .dialog-modal .content-modal ul li span {
+    color: #64CED3;
+    font-weight: 600;
+  }
+
+  .dialog-modal .content-modal p span {
+    color: #A855F7;
+    font-weight: 600;
   }
   
   .dialog-modal .close-modal, .dialog-P .close-modal-P, .dialog-erro .close-modal-erro {

@@ -91,61 +91,16 @@
           </div>
 
           <div class="content-modal">
-            <h2>Intervalo de Confiança - Média</h2>
+            <h2>Intervalo de Confiança - Proporção</h2>
             <p>
-              O intervalo de confiança para a média é uma medida estatística que
-              fornece uma faixa de valores dentro da qual se espera que esteja a
-              média populacional de uma determinada variável, com um certo nível
-              de confiança.
+              O intervalo de confiança para proporção é usado para estimar a proporção de uma característica em uma população com um determinado grau de confiança. Ele leva em consideração o valor de P (proporção da amostra), o tamanho da amostra e o nível de confiança desejado.
             </p>
-            <p>
-              Quando estamos lidando com dados amostrais, geralmente não temos
-              acesso a toda a população, então precisamos fazer inferências
-              sobre os parâmetros populacionais com base nas informações obtidas
-              da amostra. O intervalo de confiança para a média é uma dessas
-              inferências.
-            </p>
-            <p>
-              O intervalo de confiança para a média é calculado a partir das
-              características da amostra, como média amostral, desvio padrão
-              amostral e tamanho da amostra, juntamente com um nível de
-              confiança escolhido. O nível de confiança é uma medida da
-              probabilidade de que o intervalo captura corretamente o valor
-              verdadeiro da média populacional. É comum usar níveis de confiança
-              de 90%, 95% ou 99%.
-            </p>
-            <p>
-              O cálculo do intervalo de confiança para a média é baseado na
-              distribuição t de Student, que leva em consideração o tamanho da
-              amostra e a variabilidade dos dados. Quanto maior o tamanho da
-              amostra, menor será o intervalo de confiança, pois a estimativa da
-              média amostral será mais precisa.
-            </p>
-            <p>
-              Por exemplo, suponha que temos uma amostra de 100 indivíduos e
-              queremos estimar a média de altura da população com 95% de
-              confiança. Após calcular a média e o desvio padrão da amostra,
-              podemos usar a distribuição t de Student para determinar os
-              valores críticos correspondentes ao nível de confiança escolhido.
-              Com esses valores, construímos o intervalo de confiança para a
-              média, que nos dirá que, em média, a altura populacional está
-              dentro dessa faixa específica.
-            </p>
-            <p>
-              É importante lembrar que o intervalo de confiança não fornece uma
-              estimativa pontual da média populacional, mas sim uma faixa de
-              valores plausíveis. Além disso, o intervalo de confiança é baseado
-              em pressuposições e limitações específicas, como a aleatoriedade
-              da amostra e a representatividade da mesma em relação à população.
-            </p>
-            <p>
-              Em resumo, o intervalo de confiança para a média é uma ferramenta
-              estatística que nos permite fazer inferências sobre a média
-              populacional com base em informações amostrais. Ele fornece uma
-              estimativa da incerteza associada à estimativa da média e é útil
-              para tomar decisões e fazer previsões com um certo nível de
-              confiança.
-            </p>
+            <ul>
+              <li><span>Valor de P: </span>O valor de P é a proporção observada na amostra para a característica em estudo. Por exemplo, se você está interessado em estimar a proporção de pessoas que possuem um certo atributo, o valor de P seria a proporção dessa característica na amostra.</li>
+              <li><span>Tamanho da amostra: </span>O tamanho da amostra é o número de observações ou indivíduos na amostra. Quanto maior o tamanho da amostra, mais precisa será a estimativa da proporção populacional.</li>
+              <li><span>Grau de confiança: </span>O grau de confiança representa a probabilidade de que o intervalo de confiança contém a verdadeira proporção populacional. Geralmente, é expresso em forma percentual, como 90%, 95% ou 99% de confiança.</li>
+            </ul>
+            <p><span>Exemplo: </span>Digamos que você esteja conduzindo uma pesquisa sobre a preferência de sabores de sorvete em uma determinada cidade. Você coleta uma amostra aleatória de 500 pessoas e descobre que 60% delas preferem sorvete de chocolate. Agora você pode calcular o intervalo de confiança para a proporção de pessoas que preferem sorvete de chocolate com um nível de confiança de 90%. Isso irá fornecer um intervalo dentro do qual a verdadeira proporção populacional provavelmente está contida.</p>
           </div>
         </dialog>
 
@@ -162,8 +117,10 @@
             <th>Grau de Confiança:</th>
             <td id="grauConf-td"></td>
           </tr>
-          
-          
+          <tr>
+            <th>Erro Proporção:</th>
+            <td id="erro-td"></td>
+          </tr>
         </table>
 
         <div id="resultado"><h2>Intervalo de confiança:</h2>
